@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate - Ease Converter</title>
+    <link rel="icon" href="loop-arrow.png" type="image/png">
+
+
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+      }
+
+      .donation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .donation-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .payment-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .payment-option img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+
+      .payment-details {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      nav {
+        background-color: greenyellow;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+      }
+
+      nav li {
+        margin: 0 10px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+      }
+
+      nav a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <b
+          ><li><a href="main.html">Home</a></li></b
+        >
+        <b
+          ><li><a href="aboutus.html">About Us</a></li></b
+        >
+        <b
+          ><li><a href="contactus.html">Contact Us</a></li></b
+        >
+      </ul>
+    </nav>
+
+    <div class="donation-container">
+      <div class="donation-options">
+        <div class="payment-option">
+          <img src="qr-code-scan.png" alt="QR Code" /><br />
+          <div class="payment-details">
+            Scan the QR code to donate via QR payment apps like Gpay, Paytm,
+            PhonePe, etc.
+          </div>
+        </div>
+
+        <div class="payment-option">
+          <div class="payment-details">
+            Donate via bank transfer to the following account:<br />
+            Account Number: 1234567890<br />
+            Bank: Example Bank<br />
+            IFSC Code: ABCD1234
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

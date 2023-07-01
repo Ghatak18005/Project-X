@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Length Converter</title>
+    <link rel="icon" href="loop-arrow.png" type="image/png">
+
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        max-width: 500px;
+        width: 500px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        margin-top: 130px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 25px;
+        color: #333;
+        margin: 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .converter {
+        margin-bottom: 20px;
+      }
+
+      nav {
+        background-color: greenyellow;
+        height: 50px;
+        margin-bottom: 20px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+      }
+
+      nav li {
+        margin: 0 10px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+      }
+
+      nav a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <nav>
+    <ul>
+      <b
+        ><li><a href="main.html">Home</a></li></b
+      >
+      <b
+        ><li><a href="weight.html">Weight</a></li></b
+      >
+      <b
+        ><li><a href="temperature.html">Temperature</a></li></b
+      >
+      <b
+        ><li><a href="energy.html">Energy</a></li></b
+      >
+      <b
+        ><li><a href="currency.html">Currency</a></li></b
+      >
+    </ul>
+  </nav>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Length Converter</h1>
+      </div>
+
+      <div class="converter">
+        <div>
+          <label for="length">Length:</label>
+          <input type="number" id="length" placeholder="Enter length" />
+        </div>
+        <div>
+          <label for="unitFrom">From:</label>
+          <select id="unitFrom">
+            <option value="m">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="km">Kilometers</option>
+            <option value="ft">Feet</option>
+            <option value="in">Inches</option>
+            <option value="yd">Yards</option>
+          </select>
+        </div>
+        <div>
+          <label for="unitTo">To:</label>
+          <select id="unitTo">
+            <option value="m">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="km">Kilometers</option>
+            <option value="ft">Feet</option>
+            <option value="in">Inches</option>
+            <option value="yd">Yards</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="convertLength()">Convert</button>
+
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function convertLength() {
+        var length = parseFloat(document.getElementById("length").value);
+        var unitFrom = document.getElementById("unitFrom").value;
+        var unitTo = document.getElementById("unitTo").value;
+
+        var result;
+
+        if (unitFrom === "m" && unitTo === "cm") {
+          result = length * 100;
+        } else if (unitFrom === "cm" && unitTo === "m") {
+          result = length / 100;
+        } else if (unitFrom === "m" && unitTo === "km") {
+          result = length / 1000;
+        } else if (unitFrom === "km" && unitTo === "m") {
+          result = length * 1000;
+        } else if (unitFrom === "ft" && unitTo === "m") {
+          result = length * 0.3048;
+        } else if (unitFrom === "m" && unitTo === "ft") {
+          result = length / 0.3048;
+        } else if (unitFrom === "in" && unitTo === "cm") {
+          result = length * 2.54;
+        } else if (unitFrom === "cm" && unitTo === "in") {
+          result = length / 2.54;
+        } else if (unitFrom === "yd" && unitTo === "m") {
+          result = length * 0.9144;
+        } else if (unitFrom === "m" && unitTo === "yd") {
+          result = length / 0.9144;
+        } else if (unitFrom === "km" && unitTo === "cm") {
+          result = length * 100000;
+        } else if (unitFrom === "cm" && unitTo === "km") {
+          result = length / 100000;
+        } else if (unitFrom === "ft" && unitTo === "cm") {
+          result = length * 30.48;
+        } else if (unitFrom === "cm" && unitTo === "ft") {
+          result = length / 30.48;
+        } else if (unitFrom === "in" && unitTo === "ft") {
+          result = length * 0.0833333;
+        } else if (unitFrom === "ft" && unitTo === "in") {
+          result = length / 0.0833333;
+        } else if (unitFrom === "in" && unitTo === "m") {
+          result = length * 0.0254;
+        } else if (unitFrom === "m" && unitTo === "in") {
+          result = length / 0.0254;
+        } else if (unitFrom === "yd" && unitTo === "cm") {
+          result = length * 91.44;
+        } else if (unitFrom === "cm" && unitTo === "yd") {
+          result = length / 91.44;
+        }
+        // Add more conversion cases as needed
+
+        document.getElementById("result").textContent =
+          "Result: " + result + " " + unitTo;
+      }
+    </script>
+  </body>
+</html>

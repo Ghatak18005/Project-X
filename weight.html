@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight</title>
+    <link rel="icon" href="loop-arrow.png" type="image/png">
+
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        max-width: 500px;
+        width: 500px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        margin-top: 130px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 25px;
+        color: #333;
+        margin: 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .converter {
+        margin-bottom: 20px;
+      }
+
+      nav {
+        background-color: greenyellow;
+        height: 50px;
+        margin-bottom: 20px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+      }
+
+      nav li {
+        margin: 0 10px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+      }
+
+      nav a:hover {
+        color: white;
+      }
+
+</style>
+
+</head>
+
+  <body>
+
+    <nav>
+        <ul>
+          <b
+            ><li><a href="main.html">Home</a></li></b
+          >
+          <b
+            ><li><a href="weight.html">Weight</a></li></b
+          >
+          <b
+            ><li><a href="temperature.html">Temperature</a></li></b
+          >
+          <b
+            ><li><a href="energy.html">Energy</a></li></b
+          >
+          <b
+            ><li><a href="currency.html">Currency</a></li></b
+          >
+        </ul>
+      </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Weight Converter</h1>
+        </div>
+
+        <div class="converter">
+            <div>
+                <label for="weight">Weight:</label>
+                <input type="number" id="weight" placeholder="Enter weight" />
+            </div>
+            <div>
+                <label for="unitFrom">From:</label>
+                <select id="unitFrom">
+                    <option value="kg">Kilograms</option>
+                    <option value="lb">Pounds</option>
+                    <option value="g">Grams</option>
+                    <option value="oz">Ounces</option>
+                </select>
+            </div>
+            <div>
+                <label for="unitTo">To:</label>
+                <select id="unitTo">
+                    <option value="kg">Kilograms</option>
+                    <option value="lb">Pounds</option>
+                    <option value="g">Grams</option>
+                    <option value="oz">Ounces</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="convertWeight()">Convert</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertWeight() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const unitFrom = document.getElementById('unitFrom').value;
+            const unitTo = document.getElementById('unitTo').value;
+
+            let result;
+
+            if (unitFrom === 'kg') {
+                if (unitTo === 'lb') {
+                    result = weight * 2.20462;
+                } else if (unitTo === 'g') {
+                    result = weight * 1000;
+                } else if (unitTo === 'oz') {
+                    result = weight * 35.274;
+                } else {
+                    result = weight;
+                }
+            } else if (unitFrom === 'lb') {
+                if (unitTo === 'kg') {
+                    result = weight * 0.453592;
+                } else if (unitTo === 'g') {
+                    result = weight * 453.592;
+                } else if (unitTo === 'oz') {
+                    result = weight * 16;
+                } else {
+                    result = weight;
+                }
+            } else if (unitFrom === 'g') {
+                if (unitTo === 'kg') {
+                    result = weight * 0.001;
+                } else if (unitTo === 'lb') {
+                    result = weight * 0.00220462;
+                } else if (unitTo === 'oz') {
+                    result = weight * 0.035274;
+                } else {
+                    result = weight;
+                }
+            } else if (unitFrom === 'oz') {
+                if (unitTo === 'kg') {
+                    result = weight * 0.0283495;
+                } else if (unitTo === 'lb') {
+                    result = weight * 0.0625;
+                } else if (unitTo === 'g') {
+                    result = weight * 28.3495;
+                } else {
+                    result = weight;
+                }
+            }
+
+            document.getElementById('result').innerText = result.toFixed(2);
+        }
+    </script>
+
+    
+</body>
+</html>

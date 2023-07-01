@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy</title>
+    <link rel="icon" href="loop-arrow.png" type="image/png">
+
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 500px;
+        width: 500px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 25px;
+        color: #333;
+        margin: 0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .converter {
+        margin-bottom: 20px;
+    }
+</style>
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Energy Converter</h1>
+        </div>
+
+        <div class="converter">
+            <div>
+                <label for="energy">Energy:</label>
+                <input type="number" id="energy" placeholder="Enter energy" />
+            </div>
+            <div>
+                <label for="unitFrom">From:</label>
+                <select id="unitFrom">
+                    <option value="j">Joules</option>
+                    <option value="cal">Calories</option>
+                    <option value="btu">British Thermal Units (BTU)</option>
+                    <option value="kwh">Kilowatt-Hours (kWh)</option>
+                </select>
+            </div>
+            <div>
+                <label for="unitTo">To:</label>
+                <select id="unitTo">
+                    <option value="j">Joules</option>
+                    <option value="cal">Calories</option>
+                    <option value="btu">British Thermal Units (BTU)</option>
+                    <option value="kwh">Kilowatt-Hours (kWh)</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="convertEnergy()">Convert</button>
+
+        <p id="result"></p>
+
+        <script>
+            function convertEnergy() {
+                const energy = parseFloat(document.getElementById('energy').value);
+                const unitFrom = document.getElementById('unitFrom').value;
+                const unitTo = document.getElementById('unitTo').value;
+    
+                let result;
+    
+                if (unitFrom === 'j') {
+                    if (unitTo === 'cal') {
+                        result = energy * 0.239006;
+                    } else if (unitTo === 'btu') {
+                        result = energy * 0.000947817;
+                    } else if (unitTo === 'kwh') {
+                        result = energy * 0.0000002778;
+                    } else {
+                        result = energy;
+                    }
+                } else if (unitFrom === 'cal') {
+                    if (unitTo === 'j') {
+                        result = energy * 4.184;
+                    } else if (unitTo === 'btu') {
+                        result = energy * 0.00396567;
+                    } else if (unitTo === 'kwh') {
+                        result = energy * 0.00000116222;
+                    } else {
+                        result = energy;
+                    }
+                } else if (unitFrom === 'btu') {
+                    if (unitTo === 'j') {
+                        result = energy * 1055.06;
+                    } else if (unitTo === 'cal') {
+                        result = energy * 252.164;
+                    } else if (unitTo === 'kwh') {
+                        result = energy * 0.000293071;
+                    } else {
+                        result = energy;
+                    }
+                } else if (unitFrom === 'kwh') {
+                    if (unitTo === 'j') {
+                        result = energy * 3600000;
+                    } else if (unitTo === 'cal') {
+                        result = energy * 859845.227859;
+                    } else if (unitTo === 'btu') {
+                        result = energy * 3412.141633128;
+                    } else {
+                        result = energy;
+                    }
+                }
+    
+                document.getElementById('result').innerText = result.toFixed(2);
+            }
+        </script>
+    
+</body>
+
+</html>
