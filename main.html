@@ -117,7 +117,7 @@
         text-align: center;
         padding: 20px;
       }
-      nav > ul {
+      nav ul {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -129,18 +129,16 @@
         left: 0;
         background-color: greenyellow;
         transition: transform 0.3s ease-in;
+        z-index: 1;
       }
       nav ul.show {
-        transform: translateY(0);
+        transform: translateX(0);
       }
       nav li {
-        margin: 10px 0;
+        margin: 20px 0;
       }
       .menu-icon {
         display: block;
-        position: absolute;
-        top: 10px;
-        right: 10px;
       }
     }
   </style>
@@ -158,7 +156,7 @@
 
   <script>
     const menuIcon = document.querySelector(".menu-icon");
-    const navList = document.querySelector("nav > ul");
+    const navList = document.querySelector("nav ul");
 
     menuIcon.addEventListener("click", () => {
       navList.classList.toggle("show");
