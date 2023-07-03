@@ -12,55 +12,26 @@
       margin: 0;
     }
 
-    nav {
-      background-color: greenyellow;
-      height: 50px;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+    a.horizontal-bar {
       display: flex;
-      justify-content: space-around;
       align-items: center;
-      height: 100%;
-    }
-
-    nav li {
-      margin: 0 10px;
-    }
-
-    nav a {
-      color: black;
-      text-decoration: none;
-      font-size: 25px;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    .expand-button {
-      display: none;
-      background-color: greenyellow;
-      color: black;
-      text-decoration: none;
-      font-size: 25px;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .menu-item {
-      flex: 1 0 50%;
       padding: 20px;
-      box-sizing: border-box;
+      background-color: black;
+      color: white;
+      font-size: 24px;
+    }
+
+    .horizontal-bar .image-container img {
+      width: 250px;
+      height: 250px;
+      border-radius: 30%;
+      padding: 20px;
+    }
+
+    .horizontal-bar .text-container {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
     }
 
     .image-container img {
@@ -92,7 +63,87 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    p {
+      margin: 10px;
+    }
+
+    nav {
+      background-color: greenyellow;
+      height: 50px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .menu-item {
+      flex: 1 0 50%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .expand-button {
+      display: none;
+      background-color: greenyellow;
+      color: black;
+      text-decoration: none;
+      font-size: 25px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    }
+
     @media screen and (max-width: 600px) {
+      body
+      {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        text-overflow: auto;        
+      }
+
+      .image-container img
+      {
+          width: 50%;
+          height: 50%;
+          padding: 30px;
+      }
+
+      .text-container p
+      {
+        font-size: 15px;
+        display:block;
+        text-align: center;
+        overflow: hidden;
+        white-space: auto;
+      }
+
       nav ul {
         display: none;
       }
@@ -108,7 +159,10 @@
       .menu.open {
         display: flex;
       }
+
+      
     }
+
 
   </style>
 </head>
@@ -123,104 +177,144 @@
     <button class="expand-button" onclick="toggleMenu()">&#9776;</button>
   </nav>
 
-  <div class="menu">
-    <div class="menu-item">
-      <div class="image-container">
+
+
+  <div class="horizontal-bar">
+    <div class="image-container">
+      <a href="length.html">
+        <img src="measuring-tape.png" alt="Image" />
+      </a>
+    </div>
+    <div class="text-container">
+      <p>
+        Length is a fundamental physical quantity that measures the extent or
+        distance between two points in space. It is a fundamental dimension
+        and plays a vital role in various fields, including science,
+        engineering, construction, and everyday life. In scientific terms,
+        length is typically defined as the measurement of the physical
+        separation or spatial interval between two objects or points. It is
+        often represented using units such as meters (m), centimeters (cm),
+        inches (in), feet (ft), yards (yd), or miles (mi), among others,
+        depending on the system of measurement used.
+      </p>
+      <br />
+
+      <div class="button-container">
         <a href="length.html">
-          <img src="measuring-tape.png" alt="Image" />
+          <button class="convert-button">Convert Now</button>
         </a>
       </div>
-      <div class="text-container">
-        <p>
-          Length is a fundamental physical quantity that measures the extent or distance between two points in space.
-          It is a fundamental dimension and plays a vital role in various fields, including science, engineering, construction, and more.
-        </p>
-        <br />
-        <div class="button-container">
-          <a href="length.html">
-            <button class="convert-button">Convert Now</button>
-          </a>
-        </div>
-      </div>
     </div>
+  </div>
 
-    <div class="menu-item">
-      <div class="image-container">
+  <div class="horizontal-bar">
+    <div class="image-container">
+      <a href="weight.html">
+        <img src="weigth.png" alt="Image" />
+      </a>
+    </div>
+    <div class="text-container">
+      <p>
+        Weight refers to the measure of the gravitational force acting on an
+        object due to its mass. It is a fundamental property of matter and is
+        commonly measured in units such as pounds (lb) or kilograms (kg).
+        Weight can be understood in relation to mass, but they are not the
+        same. Mass is a measure of the amount of matter present in an object
+        and is a constant property that remains the same regardless of the
+        location or environment. In contrast, weight varies depending on the
+        strength of the gravitational field acting upon an object. Weight is
+        calculated by multiplying an object's mass by the acceleration due to
+        gravity.
+      </p>
+      <br />
+
+      <div class="button-container">
         <a href="weight.html">
-          <img src="weigth.png" alt="Image" />
+          <button class="convert-button">Convert Now</button>
         </a>
       </div>
-      <div class="text-container">
-        <p>
-          Weight refers to the measure of the gravitational force acting on an object due to its mass.
-          It is a fundamental property of matter and is commonly measured in units such as pounds (lb) or kilograms (kg).
-        </p>
-        <br />
-        <div class="button-container">
-          <a href="weight.html">
-            <button class="convert-button">Convert Now</button>
-          </a>
-        </div>
-      </div>
     </div>
+  </div>
 
-    <div class="menu-item">
-      <div class="image-container">
+  <div class="horizontal-bar">
+    <div class="image-container">
+      <a href="temperature.html">
+        <img src="temp.png" alt="Image" />
+      </a>
+    </div>
+    <div class="text-container">
+      <p>
+        Temperature is a fundamental physical quantity that measures the level
+        of heat or coldness of an object or environment. It is a measure of
+        the average kinetic energy of the particles within a substance or
+        system. In scientific terms, temperature is often defined based on the
+        behavior of a particular substance, such as the expansion or
+        contraction of a liquid, gas, or solid. The most commonly used
+        temperature scale is the Celsius scale (°C), where water freezes at
+        0°C and boils at 100°C at standard atmospheric pressure. Another
+        widely used scale is the Fahrenheit scale (°F), commonly used in the
+        United States, where water freezes at 32°F and boils at 212°F at
+        standard atmospheric pressure.
+      </p>
+      <br />
+
+      <div class="button-container">
         <a href="temperature.html">
-          <img src="temp.png" alt="Image" />
+          <button class="convert-button">Convert Now</button>
         </a>
       </div>
-      <div class="text-container">
-        <p>
-          Temperature is a fundamental physical quantity that measures the level of heat energy of the particles within a substance or system.
-          In scientific terms, temperature is often defined based on the behavior of a particular substance, such as the expansion or contraction.
-        </p>
-        <br />
-        <div class="button-container">
-          <a href="temperature.html">
-            <button class="convert-button">Convert Now</button>
-          </a>
-        </div>
-      </div>
     </div>
+  </div>
 
-    <div class="menu-item">
-      <div class="image-container">
+  <div class="horizontal-bar">
+    <div class="image-container">
+      <a href="energy.html">
+        <img src="flash.png" alt="Image" />
+      </a>
+    </div>
+    <div class="text-container">
+      <p>
+        Scientists define energy as the ability to do work. Modern
+        civilization is possible because people have learned how to change
+        energy from one form to another and then use it to do work. People use
+        energy to walk and bicycle, to move cars along roads and boats through
+        water, to cook food on stoves, to make ice in freezers, to light our
+        homes and offices, to manufacture products, and to send astronauts
+        into space.
+      </p>
+      <br />
+
+      <div class="button-container">
         <a href="energy.html">
-          <img src="flash.png" alt="Image" />
+          <button class="convert-button">Convert Now</button>
         </a>
-      </div>
-      <div class="text-container">
-        <p>
-          Scientists define energy as the ability to do work or cause change.
-          It is present in various forms, such as kinetic energy, potential energy, thermal energy, and more.
-        </p>
-        <br />
-        <div class="button-container">
-          <a href="energy.html">
-            <button class="convert-button">Convert Now</button>
-          </a>
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="menu-item">
-      <div class="image-container">
+  <div class="horizontal-bar">
+    <div class="image-container">
+      <a href="currency.html">
+        <img src="forex.png" alt="Image" />
+      </a>
+    </div>
+    <div class="text-container">
+      <p>
+        Currency is a medium of exchange that facilitates the buying, selling,
+        and trading of goods and services. It serves as a unit of account, a
+        store of value, and a standard of deferred payment. Throughout
+        history, various forms of currency have been used by different
+        civilizations, ranging from shells and beads to precious metals like
+        gold and silver. Today, most countries have their own national
+        currencies, which are issued and regulated by their respective central
+        banks.
+      </p>
+      <br />
+
+      <div class="button-container">
         <a href="currency.html">
-          <img src="forex.png" alt="Image" />
+          <button class="convert-button">Convert Now</button>
         </a>
-      </div>
-      <div class="text-container">
-        <p>
-          Currency is a medium of exchange that facilitates the buying, selling, and trading of goods and services.
-          It plays a crucial role in the global economy, and different countries have their own currencies.
-        </p>
-        <br />
-        <div class="button-container">
-          <a href="currency.html">
-            <button class="convert-button">Convert Now</button>
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -230,6 +324,7 @@
       var menu = document.querySelector('.menu');
       menu.classList.toggle('open');
     }
+    
   </script>
 </body>
 
