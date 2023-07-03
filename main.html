@@ -168,14 +168,20 @@
 </head>
 
 <body>
-  <nav>
+  <div class="menu">
     <ul>
       <li><a href="aboutus.html">About Us</a></li>
       <li><a href="contactus.html">Contact Us</a></li>
       <li><a href="donate.html">Donate</a></li>
     </ul>
-  </nav>
-
+    <input type="checkbox" id="menu-toggle" class="expand-button">
+    <label for="menu-toggle" class="expand-button-label">&#9776;</label>
+    <ul>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </div>
 
 
   <div class="horizontal-bar">
@@ -319,11 +325,16 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      var menu = document.querySelector('.menu');
-      menu.classList.toggle('open');
-    }
+    var expandButton = document.querySelector('.expand-button');
+    var menu = document.querySelector('.menu');
 
+    expandButton.addEventListener('change', function () {
+      if (this.checked) {
+        menu.classList.add('open');
+      } else {
+        menu.classList.remove('open');
+      }
+    });
   </script>
 </body>
 
