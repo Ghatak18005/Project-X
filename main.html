@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
     body {
       margin: 0;
     }
+
     a.horizontal-bar {
       display: flex;
       align-items: center;
@@ -66,55 +68,73 @@
     }
 
     nav {
-  background-color: greenyellow;
-  height: 50px;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-}
-
-nav li {
-  margin: 0 10px;
-}
-
-nav a {
-  color: black;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-nav a:hover {
-  color: white;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 28px;
-}
-
-
-@media (max-width: 768px) {
-      .menu-icon {
-        display: block;  
-      }
-      ul {
-        display: none;
-      }
+      background-color: greenyellow;
+      height: 50px;
     }
 
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    .ul
+    {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .menu-icon {
+        display: block;  
+      }  
+      ul {
+        display: none;
+      } 
+    }
+    
+    /* Tablet + styles */    
     @media (min-width: 768px) {
+      .menu-icon {  
+        display: none;
+      }
+      ul {
+        display: flex;
+      }      
+    }
+
+    /* Other CSS */
+    
+    p {
+      font-size: 1rem; 
+    }
+      
+    @media (min-width: 768px) {      
       p {
         font-size: 1.2rem;
       }
     }
-
   </style>
 </head>
 
@@ -127,7 +147,7 @@ nav a:hover {
       <li><a href="donate.html">Donate</a></li>
     </ul>
   </nav>
-  
+
 
 
   <div class="horizontal-bar">
