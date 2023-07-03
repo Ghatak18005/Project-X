@@ -109,17 +109,14 @@
         flex-direction: column;
         align-items: center;
       }
-
       .horizontal-bar .image-container img {
         width: 150px;
         height: 150px;
       }
-
       .horizontal-bar .text-container {
         text-align: center;
         padding: 20px;
       }
-
       nav ul {
         display: none;
         flex-direction: column;
@@ -133,17 +130,17 @@
         background-color: greenyellow;
         transition: transform 0.3s ease-in;
       }
-
       nav ul.show {
         transform: translateY(0);
       }
-
       nav li {
         margin: 10px 0;
       }
-
       .menu-icon {
         display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
@@ -160,14 +157,14 @@
   </nav>
 
 
-<script>
-  const menuIcon = document.querySelector(".menu-icon");
-  const navList = document.querySelector("nav ul");
+  <script>
+    const menuIcon = document.querySelector(".menu-icon");
+    const navList = document.querySelector("nav > ul");
 
-  menuIcon.addEventListener("click", () => {
-    navList.classList.toggle("show");
-  });
-</script>
+    menuIcon.addEventListener("click", () => {
+      navList.classList.toggle("show");
+    });
+  </script>
 
 
   <div class="horizontal-bar">
